@@ -175,7 +175,6 @@ function handle_paste(ev: ClipboardEvent, read_save: () => void, main: () => voi
 
 	localStorage.save = save_string;
 	localStorage.notation = game.options.menu.standardNotation.enabled;
-	jobless = game.global.ShieldEquipped.name == "Job";
 	set_hze(game.global.highestRadonLevelCleared + 1);
 
 	read_save();
