@@ -28,57 +28,19 @@ block content
             | z60–99
           option(value='mid')
             | z100–180
-          option(value='corruption')
-            | z181–229
-          option(value='magma')
-            | z230–280
-          option(value='z280')
-            | z280–400
-          option(value='z400')
-            | z400–450
-          option(value='z450')
-            | z450+
-          option(disabled)
-            | — Special-purpose presets —
-          option(value='spire' data-hide=200)
-            | Spire respec
-          option(value='nerfed')
-            | Nerfed feat
-          option(value='tent')
-            | Tent City feat
-          option(value='scientist')
-            | Scientist challenge
-          option(value='carp' data-hide=65)
-            | Trapper² (initial)
-          option(value='trapper' data-hide=65)
-            | Trapper² (respec)
-          option(value='coord' data-hide=65)
-            | Coordinate²
-          option(value='trimp' data-hide=65)
-            | Trimp²
-          option(value='metal' data-hide=65)
-            | Metal²
-          option(value='c2' data-hide=65)
-            | Other c²
-          option(value='income')
-            | Income
-          option(value='unesscented')
-            | Unesscented
-          option(value='nerfeder')
-            | Nerfeder
         | Presets
       label(title='How much you value +1% Helium income.')
         input#weight-he(type='text' oninput='check_input(this)' required data-saved='')
-        | Weight: Helium
+        | Weight: Helium
       label(title='How much you value +1% attack.')
         input#weight-atk(type='text' oninput='check_input(this)' required data-saved='')
-        | Weight: Attack
+        | Weight: Attack
       label(title='How much you value +1% survivability (health and block).')
         input#weight-hp(type='text' oninput='check_input(this)' required data-saved='')
-        | Weight: Health
+        | Weight: Health
       label(title='How much you value +1% Fluffy exp gain.' data-hide=301)
         input#weight-xp(type='text' oninput='check_input(this)' required data-saved='')
-        | Weight: Fluffy
+        | Weight: Fluffy
       label(title='A list of perks that you don’t want to change, for example “power=42, carp=31”')
         input#fixed(type='text' oninput='validate_fixed()' data-saved='')
         | Fixed perks
@@ -120,7 +82,7 @@ block content
           | Breed timer
         label(title='How much you value +1% population. WARNING: the effects of population on attack/health are already counted')
           input#weight-trimps(type='text' value='0' oninput='check_input(this)' data-saved='')
-          | Weight: Population
+          | Weight: Population
       button.centered(type='submit') Optimize!
     .filler
     .filler
