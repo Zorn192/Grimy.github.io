@@ -3,8 +3,6 @@
 declare var LZString: {[key: string]: (str: string) => string};
 const {abs, ceil, floor, log, max, min, pow, round, sqrt} = Math;
 
-let jobless = false;
-
 ///
 // HTML manipulation utilities
 ///
@@ -82,7 +80,7 @@ function prettify(number: number): string {
 	if (number < 10000)
 		return +number.toPrecision(4) + '';
 
-	if (localStorage.notation === '0') // scientific
+	if (localStorage.notation === '0')
 		return number.toExponential(2).replace('+', '');
 
 	let unit = 0;
@@ -178,7 +176,7 @@ function handle_paste(ev: ClipboardEvent, read_save: () => void, main: () => voi
 	localStorage.save = save_string;
 	localStorage.notation = game.options.menu.standardNotation.enabled;
 	jobless = game.global.ShieldEquipped.name == "Job";
-	set_hze(game.global.highestLevelCleared + 1);
+	set_hze(game.global.highestRadonLevelCleared + 1);
 
 	read_save();
 	main();
