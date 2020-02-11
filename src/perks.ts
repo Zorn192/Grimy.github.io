@@ -193,7 +193,7 @@ function display(results: any) {
 	$('#he-left').innerHTML = prettify(ra_left) + ' Radon Left Over';
 	$('#perks').innerHTML = Object.keys(perks).filter(name => !perks[name].locked).map(name => {
 		let {level, max_level} = perks[name];
-		let diff = game ? level - game.portal[name].level : 0;
+		let diff = game ? level - game.portal[name].radLevel : 0;
 		let diff_text = diff ? ` (${diff > 0 ? '+' : '-'}${prettify(abs(diff))})` : '';
 		let style = diff > 0 ? 'adding' : diff < 0 ? 'remove' : level >= max_level ? 'capped' : '';
 		style += [' large', ' small', ' tiny'][perk_size];
@@ -259,9 +259,8 @@ function parse_perks(fixed: string, unlocks: string) {
 		if (!m)
 			throw 'Enter a list of perk levels, such as “power=42, toughness=51”.';
 
-		let tier2 = m[1].match(/2$|II$/i);
 		let name = m[1].replace(/[ _]?(2|II)/i, '').replace(/^OK/i, 'O').replace(/^Looty/i, 'L');
-		let regex = new RegExp(`^${name}[a-z]*${tier2 ? '_II' : ''}$`, 'i');
+		let regex = new RegExp(`^${name}[a-z]*${''}$`, 'i');
 		let matches = Object.keys(perks).filter(p => p.match(regex));
 
 		if (matches.length > 1)
