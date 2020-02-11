@@ -1,6 +1,6 @@
 /// <reference path="./trimps.ts"/>
 
-let death_stuff = {
+/*let death_stuff = {
 	max_hp: 1e300,
 	block: 0,
 	challenge_attack: 1,
@@ -236,12 +236,14 @@ const parse_inputs = () => ({
 
 	...death_stuff
 });
-
+*/
 // Return info about the best zone for each stance
+/*
 function get_best(stats: any[], stances: string) {
 	let best: any = { overall: "", stance: "", second: "", second_stance: "", ratio: 0 };
-
+*/
 	/* jshint loopfunc:true */
+/*
 	for (let stance of stances) {
 		stats.sort((a, b) => b[stance].value - a[stance].value);
 		best[stance] = stats[0].zone;
@@ -258,7 +260,6 @@ function get_best(stats: any[], stances: string) {
 
 	return best;
 }
-
 function display(results: any[]) {
 	let [stats, stances] = results;
 
@@ -605,3 +606,4 @@ function stats(g: any) {
 
 	return [stats, stances];
 }
+*/
