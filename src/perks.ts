@@ -128,10 +128,7 @@ function read_save() {
 			loot *= 1 + 0.01 * mod[1];
 	}
 
-	if (jobless)
-		prod = 0;
-	else
-		chronojest += (mastery('mapLoot2') ? 5 : 4) * cache;
+	chronojest += (mastery('mapLoot2') ? 5 : 4) * cache;
 
 	// Fill the fields
 	$('#radon').value = radon + ($('#respec').checked ? 0 : game.resources.radon.owned);
