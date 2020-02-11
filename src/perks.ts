@@ -109,9 +109,9 @@ function read_save() {
 	for (let perk in game.portal)
 		radon += (game.portal[perk].radSpent || 0);
 
-	let unlocks = Object.keys(game.portal).filter(perk => !game.portal[perk].locked);
+	let unlocks = Object.keys(game.portal).filter(perk => !game.portal[perk].radLocked);
 	if (!game.global.canRespecPerks)
-		unlocks = unlocks.map(perk => perk + '>' + (game.portal[perk].level || 0));
+		unlocks = unlocks.map(perk => perk + '>' + (game.portal[perk].radLevel || 0));
 
 	// Income
 	let tt = mastery('turkimp2') ? 1 : mastery('turkimp') ? 0.4 : 0.25;
