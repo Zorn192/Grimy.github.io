@@ -229,11 +229,11 @@ function parse_perks(fixed: string, unlocks: string) {
 	const mult = (x: number) => (level: number) => pow(1 + x * 0.01, level);
 
 	let perks: {[key: string]: Perk} = {
-		Greed: 			new Perk(1e308, 0,    add(0),       40),
-		Tenacity:       new Perk(1e308, 0,    add(0),       40),
-		Criticality:    new Perk(1e308, 0,    add(0)),
-		Equality:       new Perk(1e308, 0,    add(0)),
-		Prismal:        new Perk(1e308, 0,    add(0),      100),
+		Greed: 		new Perk(1e10, 0,     mult(10),     40),
+		Tenacity:       new Perk(5e7, 0,      mult(10),     40),
+		Criticality:    new Perk(100, 0,      add(4)),
+		Equality:       new Perk(1, 0,        add(10)),
+		Prismal:        new Perk(1, 0,        add(1),       100),
 		Overkill:       new Perk(1e6,   0,    add(500),     30),
 		Resilience:     new Perk(100,   0,    mult(10)),
 		Relentlessness: new Perk(75,    0,    l => 1 + 0.05 * l * (1 + 0.3 * l), 10),
